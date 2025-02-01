@@ -36,7 +36,7 @@ public partial class TwitchApiReferenceScraperCommand : ICommand<TwitchApiRefere
         var builder = new AnsiStringBuilder();
 
         await foreach (TwitchApiQuickLookup lookup in GetApiLookupsAsync(page)) {
-            
+
             TwitchApiDocumentation doc = await GetApiDocumentationAsync(page, lookup);
 
             Console.WriteLine(builder
@@ -44,12 +44,12 @@ public partial class TwitchApiReferenceScraperCommand : ICommand<TwitchApiRefere
                 .F.AppendPalegreen(doc.Name)
                 .ToStringAndClear()
             );
-            
+
             docs.Add(doc);
         }
 
         reference.Documentation = docs.ToArray();
-        
+
         await WriteToXml(reference, parameters);
     }
 
@@ -99,7 +99,7 @@ public partial class TwitchApiReferenceScraperCommand : ICommand<TwitchApiRefere
 
         string restCommand = match.Groups["Rest"].Value;
         if (restCommand.IsNullOrWhiteSpace()) restCommand = "GET";
-        
+
         string url = match.Groups["Url"].Value;
 
         // Required Auth Scopes
@@ -141,9 +141,9 @@ public partial class TwitchApiReferenceScraperCommand : ICommand<TwitchApiRefere
             string? description = await TaskHelper.FromTaskOrDefault(columns.ElementAtOrDefault(2)?.TextContentAsync());
 
             return new RequestBodyParameter {
-                Name =name ?? string.Empty,
-                Type =type ?? string.Empty,
-                Description =description ?? string.Empty
+                Name = name ?? string.Empty,
+                Type = type ?? string.Empty,
+                Description = description ?? string.Empty
             };
         }));
 
@@ -175,15 +175,15 @@ public partial class TwitchApiReferenceScraperCommand : ICommand<TwitchApiRefere
 
         // Assemble and return the full documentation
         return new TwitchApiDocumentation {
-            Name =name,
-            RestCommand =restCommand,
-            Url =url,
+            Name = name,
+            RestCommand = restCommand,
+            Url = url,
             AuthScopes = requiredAuthScopes,
-            RequiresOAuth =requiresOAuth,
+            RequiresOAuth = requiresOAuth,
             QueryParameters = requestQueryParameters,
             BodyParameters = requestBodyParameters,
-            ResponseParameters =responseParameters,
-            Description =description
+            ResponseParameters = responseParameters,
+            Description = description
         };
     }
 

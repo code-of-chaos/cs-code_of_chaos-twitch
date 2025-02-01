@@ -4,12 +4,11 @@
 using System.Xml.Serialization;
 
 namespace Tools.CodeOfChaos.Twitch.Commands.TwitchApiReferenceScraper.Dto;
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
 // ---------------------------------------------------------------------------------------------------------------------
-public class ResponseBodyParameter() {
-    [XmlAttribute]public string Name { get; init; }
-    [XmlAttribute]public string Type { get; init; }
-    [XmlText]public string Description { get; init; }
+public class ResponseBodyParameter {
+    [XmlAttribute] public string Name { get; init; } = string.Empty;
+    [XmlAttribute] public string Type { get; init; } = string.Empty;
+    [XmlText] public string Description { get; init; } = string.Empty;
 }

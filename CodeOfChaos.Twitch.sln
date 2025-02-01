@@ -12,6 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{AF1A203C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.CodeOfChaos.Twitch", "src\Tools.CodeOfChaos.Twitch\Tools.CodeOfChaos.Twitch.csproj", "{ADEADD97-0AFA-4D9E-970B-9FFB932949B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".generated-files", ".generated-files", "{7240E885-FD94-4503-973B-C730D3D6256F}"
+	ProjectSection(SolutionItems) = preProject
+		generated-files\twitch-api.xml = generated-files\twitch-api.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
