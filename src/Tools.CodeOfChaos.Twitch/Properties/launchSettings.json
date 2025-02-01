@@ -29,6 +29,11 @@
       "_readme" : "downloads a png to a specific location to then be used by nuget packages as a built in icon",
       "commandName": "Project",
       "commandLineArgs": "nuget-download-icon --origin=\"https://avatars.githubusercontent.com/u/102103683\" --projects=\"%PROJECTS%\""
+    },
+    "Twitch Api scraper": {
+      "_readme": "",
+      "commandName": "Project",
+      "commandLineArgs": "twitchapi-reference-scraper --output=\"\"../../../../../generated-files/twitch-api.xml\""
     }
   }
 }

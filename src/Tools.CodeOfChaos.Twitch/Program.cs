@@ -4,7 +4,7 @@
 using CodeOfChaos.CliArgsParser;
 using CodeOfChaos.CliArgsParser.Library;
 
-namespace Tools.TEMPLATE;
+namespace Tools.CodeOfChaos.Twitch;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Code
@@ -16,6 +16,7 @@ public static class Program {
         CliArgsParser parser = CliArgsBuilder.CreateFromConfig(
             config => {
                 config.AddCommandsFromAssemblyEntrypoint<IAssemblyEntry>();
+                config.AddCommandsFromAssembly(typeof(Program).Assembly);
             }
         ).Build();
 
